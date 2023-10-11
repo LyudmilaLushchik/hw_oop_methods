@@ -24,84 +24,6 @@ test('should throw error if type is incorrect', () => {
   expect(() => new Character('John', 'B')).toThrowError('Некорректный тип персонажа');
 });
 
-test('should create character bowman', () => {
-  const expected = {
-    name: 'John',
-    type: 'Bowman',
-    health: 100,
-    level: 1,
-    attack: 25,
-    defence: 25,
-  };
-  const result = new Character('John', 'Bowman');
-  expect(result).toEqual(expected);
-});
-
-test('should create character swordsman', () => {
-  const expected = {
-    name: 'John',
-    type: 'Swordsman',
-    health: 100,
-    level: 1,
-    attack: 40,
-    defence: 10,
-  };
-  const result = new Character('John', 'Swordsman');
-  expect(result).toEqual(expected);
-});
-
-test('should create character magician', () => {
-  const expected = {
-    name: 'John',
-    type: 'Magician',
-    health: 100,
-    level: 1,
-    attack: 10,
-    defence: 40,
-  };
-  const result = new Character('John', 'Magician');
-  expect(result).toEqual(expected);
-});
-
-test('should create character undead', () => {
-  const expected = {
-    name: 'John',
-    type: 'Undead',
-    health: 100,
-    level: 1,
-    attack: 25,
-    defence: 25,
-  };
-  const result = new Character('John', 'Undead');
-  expect(result).toEqual(expected);
-});
-
-test('should create character zombie', () => {
-  const expected = {
-    name: 'John',
-    type: 'Zombie',
-    health: 100,
-    level: 1,
-    attack: 40,
-    defence: 10,
-  };
-  const result = new Character('John', 'Zombie');
-  expect(result).toEqual(expected);
-});
-
-test('should create character daemon', () => {
-  const expected = {
-    name: 'John',
-    type: 'Daemon',
-    health: 100,
-    level: 1,
-    attack: 10,
-    defence: 40,
-  };
-  const result = new Character('John', 'Daemon');
-  expect(result).toEqual(expected);
-});
-
 test('should throw error if no health', () => {
   const bowman = new Character('Li', 'Bowman');
   bowman.health = 0;
@@ -114,8 +36,8 @@ test('should raise level, attack, defence', () => {
     type: 'Bowman',
     health: 100,
     level: 2,
-    attack: 30,
-    defence: 30,
+    attack: 24,
+    defence: 24,
   };
   const bowman = new Character('Li', 'Bowman');
   bowman.levelUp();
@@ -126,10 +48,10 @@ test('should take damage', () => {
   const expected = {
     name: 'Li',
     type: 'Bowman',
-    health: 62.5,
+    health: 60,
     level: 1,
-    attack: 25,
-    defence: 25,
+    attack: 20,
+    defence: 20,
   };
   const bowman = new Character('Li', 'Bowman');
   bowman.damage(50);
@@ -142,8 +64,8 @@ test('should remain 0 if health was 0 before damage', () => {
     type: 'Bowman',
     health: 0,
     level: 1,
-    attack: 25,
-    defence: 25,
+    attack: 20,
+    defence: 20,
   };
   const bowman = new Character('Li', 'Bowman');
   bowman.health = 0;
